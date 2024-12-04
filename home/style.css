@@ -1,0 +1,500 @@
+/* style.css */
+
+/* General Reset */
+body {
+    margin: 0; /* Remove default browser margin */
+    font-family: 'Arial', sans-serif; /* Set default font */
+    background-color: #E4E2DD; /* Background color for the entire site */
+  }
+
+  
+/* Full Width Images */
+/* Wrapper for full-width images (Eyes and Title illustrations) */
+.full-width-images {
+    position: relative; /* Allow title image to overlap eyes */
+    width: 100%; /* Ensure the container spans the full width */
+    height: auto; /* Automatically adjust height */
+}
+  
+  /* General styling for full-width images */
+  .full-width-image {
+    width: 100%; /* Span the entire screen width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+/* Specific styling for Ripped Magazine */
+.ripped-image {
+    z-index: 2; /* Place above the Eyes Illustration but below the Title */
+    position: relative; /* Maintain standard flow */
+}
+
+/* Specific styling for Eyes Illustration */
+.eyes-image {
+    z-index: 1; /* Place underneath Ripped Magazine */
+    top: -15vh;
+    position: relative; /* Maintain standard flow */
+}
+
+/* Specific styling for Title Illustration */
+.title-image {
+    position: absolute; /* Overlay on the Ripped Magazine and Eyes Illustration */
+    top: 65%; /* Partial overlap with the Ripped Magazine */
+    left: 0; /* Align to the left edge */
+    z-index: 3; /* Ensure it overlaps both the Ripped Magazine and Eyes Illustration */
+}
+
+
+/* Main Content Wrapper */
+.content-wrapper {
+    position: relative; /* Allows child elements to position relative to this container */
+    margin: 5vh; /* Margins for spacing */
+    min-height: 100vh; /* Ensure main content takes up enough space */
+    padding-top: 10%; /* Start main content just below the title image */
+    display: flex; /* Enable flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    box-sizing: border-box; /* Include padding/margin in layout */
+    overflow: hidden; /* Prevent exhibit images from overflowing into footer */
+}
+  
+ /* Black Lines Styling */
+.lines {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Thick Black Line */
+  .thick-line {
+    height: 8px; /* Thickness for the thick line */
+    background-color: #2E2E2E; /* Line color */
+  }
+  
+  /* Thin Black Line */
+  .thin-line {
+    height: 3px; /* Thickness for the thin line */
+    background-color: #2E2E2E; /* Line color */
+    margin-top: 4px; /* Space between lines */
+  }
+  
+  
+  /* Header Section Styling */
+  .blog-header {
+    margin-top: 5vh; /* Space between header and black lines */
+    text-align: left; /* Align header text to the left */
+    width: 25vw; /* Header spans one-fourth of viewport width */
+    font-family: 'Georgia', serif; /* Set font to Georgia */
+  }
+  
+  /* Title and Subtitle Styling */
+  .title-container h1 {
+    font-size: 2rem; /* Font size for the title */
+  }
+  
+  .title-container .subtitle {
+    font-size: 1rem; /* Font size for the subtitle */
+    line-height: 1.5; /* Improve readability for multiline text */
+  }
+  
+
+/* Exhibit Images Styling */
+/* Container for all exhibit images */
+.layered-images {
+    position: relative; /* Enable absolute positioning for child images */
+    width: 100%; /* Full width of the content area */
+    height: auto; /* Auto height based on the content */
+  }
+  
+ /* General styling for each exhibit image */
+ .layered-image-container {
+    position: absolute; /* Allow precise placement */
+    min-width: 30vh; /* Fixed width for each image */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Default stacking order */
+    transition: z-index 0s; /* Instantly update z-index */
+  }
+  
+  /* Bring the hovered image to the front */
+.layered-image-container:hover {
+    z-index: 1000; /* Bring image to the front on hover */
+  }
+
+  /* Styling for exhibit images */
+  .layered-image {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 1; /* Default stacking order */
+  }
+  
+  /* Hover effect to darken the image */
+  .layered-image:hover {
+    filter: brightness(0.5); /* Darken image */
+    z-index: 100; /* Bring image to the front */
+  }
+  
+  /* Placeholder Text Styling */
+  .image-overlay {
+    position: absolute; /* Overlay on the image */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect center alignment */
+    color: white; /* White text for contrast */
+    text-align: center; /* Center-align the content */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* Shadow for readability */
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Prevent interaction */
+    transition: opacity 0.3s ease; /* Smooth appearance */
+    width: 80%; /* Limit overlay width */
+  }
+  
+  /* Hover Interaction */
+  .layered-image-container:hover .image-overlay {
+    opacity: 1; /* Show overlay on hover */
+  }
+
+/* Specific adjustments for Dear Abby */
+.image7 .image-overlay {
+    padding: 20%; /* Add padding to avoid text overflow */
+    width: 50%; /* Ensure the text doesn't exceed the container width */
+    text-align: left; /* Ensure text alignment remains centered */
+}
+
+/* Match rotation for Magazines */
+.image1 .image-overlay {
+    transform: translate(-50%, -50%) rotate(-10deg); /* Match image rotation */
+}
+
+/* Match rotation for Letter to the Editor */
+.image5 .image-overlay {
+    transform: translate(-50%, -50%) rotate(15deg); /* Match image rotation */
+}
+  
+/* Title Styling */
+.image-overlay strong {
+    font-size: 1.5rem; /* Larger font for title */
+    font-weight: bold; /* Emphasize title */
+    display: block; /* Ensure block layout for spacing */
+    margin-bottom: 10px; /* Space below title */
+  }
+  
+  /* Body Text Styling */
+  .image-overlay p {
+    font-size: 1rem; /* Smaller size for body text */
+    line-height: 1.5; /* Better readability */
+    margin: 0; /* Reset default margin */
+  }
+
+  /* Specific positioning for each exhibit image */
+/* Green Letter (Top Right) */
+.image3 {
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+    z-index: 1; /* Place behind the green letter */
+  }
+  
+/* Red Typewriter (Below Green Letter) */
+.image6 {
+    top: 10vh; /* Offset 10vh below the top */
+    right: 20%; /* Align to the left of the green letter */
+    z-index: 0; /* Place behind the green letter */
+    /* position: absolute; Enable precise placement */
+  }
+  
+  /* Dear Abby (Below Red Typewriter) */
+.image7 {
+    top: 45vh; /* Offset 30vh below the top */
+    right: 55%; /* Align to the left */
+    z-index: 3; /* Place above the red typewriter */
+  }
+  
+ /* Magazines (Below and Rotated) */
+.image1 {
+    top: 115vh; /* Offset 60vh below the top */
+    right: 60%; /* Align to the left */
+    transform: rotate(-15deg); /* Rotate 15 degrees counterclockwise */
+    z-index: 4;
+  }
+  
+/* Radio (Top Right of Dear Abby) */
+.image4 {
+    top: 45vh; /* Offset 40vh below the top */
+    right: 40%; /* Center relative to the container */
+    z-index: 4; /* Place above Dear Abby */
+  }
+  
+/* Newspaper (Rotated and Behind Radio) */
+.image5 {
+    top: 45vh; /* Align with the radio image */
+    right: 10%; /* Align to the right */
+    z-index: 1; /* Place behind the radio */
+    transform: rotate(10deg); /* Rotate 35 degrees clockwise */
+  }
+  
+/* Letter (Above and Centered) */
+.image2 {
+    top: 70vh; /* Offset 50vh below the top */
+    right: 35%; /* Center between the radio and newspaper */
+    z-index: 4; /* Place above both radio and newspaper */
+  }
+  
+
+/* Typewriter Section */
+.typewriter-section {
+    position: relative; /* Position within the flow of the content */
+    left: 25%;
+    margin-top: 45%; /* Push the section towards the bottom */
+    text-align: center; /* Center content horizontally */
+    z-index: 0; /* Ensure it sits below exhibit images */
+  }
+
+/* Typewriter Image */
+.typewriter-image {
+    max-height: 125vh; /* Limit height for large viewports */
+    min-height: 20vh; /* Ensure a minimum height for small viewports */
+    width: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center-align the image */
+  }
+
+/* TYPE Button */
+.typewriter-button {
+  position: absolute; /* Position relative to typewriter image */
+  top: 60%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%) skew(-15deg); /* Center with skew effect */
+  padding: 10px 30px; /* Add padding for size */
+  font-size: 1.2rem; /* Larger font size for readability */
+  font-family: 'Georgia', serif; /* Use Georgia font for consistency */
+  font-weight: bold; /* Bold text for emphasis */
+  background-color: #FFFFFF; /* White button background */
+  color: #2E2E2E; /* Dark text color */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+  z-index: 2; /* Ensure it sits above the typewriter image */
+}
+
+/* Button Hover Effect */
+.typewriter-button:hover {
+  background-color: #2E2E2E; /* Darken background on hover */
+  color: #FFFFFF; /* Change text to white on hover */
+}
+  
+
+  
+/* Responsive Styling */
+/* Adjust layout for smaller viewports */
+@media screen and (max-width: 768px) {
+    /* Make the header section span full width */
+    .blog-header {
+        width: 100%; /* Span full width of the viewport */
+        text-align: center; /* Center-align the content */
+        margin: 0 auto; /* Remove any additional margin */
+        padding: 10px; /* Add padding for spacing */
+    }
+
+    /* Adjust exhibit images for responsiveness */
+    .layered-images {
+        display: flex; /* Use flexbox for responsiveness */
+        flex-wrap: wrap; /* Allow wrapping to the next line */
+        justify-content: center; /* Center align images */
+        gap: 10px; /* Add spacing between items */
+    }
+
+    .layered-image-container {
+        position: relative; /* Stack images vertically in flex layout */
+        width: 100%; /* Make images responsive */
+        margin-bottom: 20px; /* Add spacing between stacked images */
+    }
+
+    /* Reset positioning and remove rotations for mobile */
+    .image3, .image6, .image7, .image1, .image4, .image5, .image2, .typewriter-section {
+        top: auto; /* Reset positioning for responsive stacking */
+        left: auto; /* Reset positioning for responsive stacking */
+        right: auto; /* Reset positioning for responsive stacking */
+        transform: none; /* Remove rotation for better stacking */
+    }
+
+    /* Adjust the typewriter image and section */
+    .typewriter-section {
+        margin-top: 10px; /* Reduce spacing above the typewriter section */
+        margin-bottom: 20px; /* Ensure spacing below */
+        text-align: center; /* Center-align the section */
+    }
+
+    .typewriter-image {
+        max-height: 60vh; /* Scale down typewriter for mobile viewports */
+        min-height: 20vh; /* Maintain visibility for smaller screens */
+        width: auto; /* Maintain aspect ratio */
+        margin: 0 auto; /* Center-align the typewriter */
+    }
+
+    /* Reduce space between typewriter and the letter image */
+    .image2 {
+        margin-top: -10px; /* Reduce spacing to overlap slightly */
+    }
+}
+
+
+  /* Modal Styling */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stays in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the full screen */
+    height: 100%; /* Cover the full screen */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 10; /* Place above other content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+  
+  .modal-content {
+    position: relative; /* For internal content alignment */
+    background-image: url('images/ripped-paper-paperclip.svg'); /* Background for modal */
+    background-size: cover; /* Cover the modal area */
+    background-repeat: no-repeat; /* Prevent repeating */
+    width: 80%; /* Make the modal span 80% of the screen */
+    max-width: 600px; /* Max width for larger screens */
+    padding: 20vh 10vh; /* Internal padding */
+    border-radius: 20px; /* Rounded corners */
+    text-align: left; /* Center-align the content */
+    word-wrap: break-word; /* Break text to fit within the container if necessary */
+    color: #000; /* Text color */
+    font-family: 'Georgia', serif; /* Use Georgia font for text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+  }
+  
+  textarea {
+    width: 100%; /* Full width inside the modal */
+    height: 100px; /* Fixed height */
+    margin: 10px 0; /* Spacing above and below */
+    padding: 10px; /* Padding inside */
+    font-size: 1rem; /* Font size for text */
+    border: none; /* Border around the box */
+    border-radius: 5px; /* Rounded corners */
+    background-color: transparent; /* Transparent background */
+    color: #000; /* Black text */
+    font-family: 'Arial', sans-serif; /* Font for the text */
+  }
+  
+  textarea::placeholder {
+    color: #888; /* Placeholder color */
+  }
+  
+/* RESPOND Button */
+button#post-comment {
+    position: relative; /* Default positioning */
+    padding: 10px 30px; /* Match padding to TYPE button */
+    font-size: 1.2rem; /* Match font size to TYPE button */
+    font-family: 'Georgia', serif; /* Use Georgia font for consistency */
+    font-weight: bold; /* Match bold text style */
+    background-color: #FFFFFF; /* White background to match TYPE button */
+    color: #2E2E2E; /* Dark text color */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: left; /* Align the button text to the left */
+    transform: skew(-15deg); /* Match the skew effect */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for consistency */
+    transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+}
+  
+  button#post-comment:hover {
+    background-color: #444; /* Lighter gray on hover */
+  }
+  
+  
+  /* Ensure the comments-section has relative positioning */
+  .comments-section {
+    position: relative; /* Constrain child elements like .print-button */
+    padding: 20px; /* Add padding around the section */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  
+  /* Hover Effect */
+  .print-button:hover {
+    background-color: #2E2E2E; /* Darken background on hover */
+    color: #FFFFFF; /* Change text to white on hover */
+  }
+  
+
+ /* Footer Section Styling */
+.blog-footer {
+    background-image: url('images/paper-background.svg'); /* Background image for footer */
+    background-size: cover; /* Ensure the image covers the footer */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-position: center; /* Center the background image */
+    color: #000; /* Black text for contrast */
+    font-family: 'Sometype Mono', monospace; /* Set font to Sometype Mono */
+    padding: 20px; /* Add padding around the footer content */
+  }
+  
+  /* Comments Section Styling */
+  .comments-section {
+    position: relative; /* Ensure child elements are positioned correctly */
+    padding: 20px; /* Add spacing around the content */
+    background-color: transparent; /* Transparent background to show the footer's image */
+    border-radius: 10px; /* Optional: Rounded corners for comments section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-top: 20px; /* Space above the comments section */
+  }
+  
+  /* Footer Heading Section */
+.footer-heading {
+    display: flex;
+    justify-content: space-between; /* Space out header and print button */
+    align-items: center;
+    margin: 0 20vh; /* Respect 20vh margin left and right */
+    padding-bottom: 20px; /* Space below heading section */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Add subtle separation */
+  }
+
+  /* Comments Header Image */
+.comments-header {
+    width: 100%; /* Make the image span the full width of the footer */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent inline spacing issues */
+    z-index: 1; /* Ensure it appears behind the print button */
+  }
+  
+ /* PRINT Button Styling */
+ .print-button {
+    position: absolute; /* Position relative to .comments-section */
+    top: 5px; /* Offset from the top of the comments-section */
+    right: 10px; /* Offset from the right of the comments-section */
+    padding: 10px 20px; /* Add padding for the button */
+    font-size: 1rem; /* Font size for the button text */
+    font-weight: bold;
+    font-family: 'Georgia', serif; /* Use Georgia font */
+    background-color: #FFFFFF; /* White button background */
+    color: #2E2E2E; /* Dark button text */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transform: skew(-10deg); /* Skew to create parallelogram shape */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: background-color 0.3s; /* Smooth hover effect */
+  }
+  
+  .print-button:hover {
+    background-color: #444; /* Darken background on hover */
+    color: #FFF; /* White text on hover */
+  }  
+
+ /* Comments List Styling */
+#comments-list {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+  
+  #comments-list li {
+    margin-bottom: 10px; /* Space between comments */
+    padding: 10px; /* Space inside each comment */
+    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+    border-radius: 5px; /* Rounded corners for comments */
+    font-family: 'Sometype Mono', monospace;
+    font-size: 1rem; /* Set font size */
+  }
+  
+  
