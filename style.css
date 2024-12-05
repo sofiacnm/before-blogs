@@ -84,15 +84,22 @@ body {
     font-family: 'Georgia', serif; /* Set font to Georgia */
   }
   
-  /* Title and Subtitle Styling */
-  .title-container h1 {
-    font-size: 2rem; /* Font size for the title */
+/* Ensure the inline title styling matches the desired appearance */
+.inline-title {
+    font-size: 5rem; /* Match the size of your original h1 */
+    font-weight: bold; /* Add bold weight if needed */
+    font-family: 'Georgia', serif; /* Ensure consistent typography */
+    display: inline; /* Keep it inline */
+    margin-right: 5px; /* Add spacing after the title if needed */
   }
   
-  .title-container .subtitle {
-    font-size: 1rem; /* Font size for the subtitle */
-    line-height: 1.5; /* Improve readability for multiline text */
+  /* Adjust the paragraph styling to include the inline title */
+  .subtitle {
+    font-size: 2rem; /* Size for the paragraph text */
+    line-height: 1.5; /* Improve readability */
+    font-family: 'Georgia', serif; /* Ensure consistent font */
   }
+  
   
 
 /* Exhibit Images Styling */
@@ -185,14 +192,14 @@ body {
   /* Specific positioning for each exhibit image */
 /* Green Letter (Top Right) */
 .image3 {
-    top: 0; /* Align to the top */
+    top: -30vh; /* Align to the top */
     right: 0; /* Align to the right */
     z-index: 1; /* Place behind the green letter */
   }
   
 /* Red Typewriter (Below Green Letter) */
 .image6 {
-    top: 10vh; /* Offset 10vh below the top */
+    top: -10vh; /* Offset 10vh below the top */
     right: 20%; /* Align to the left of the green letter */
     z-index: 0; /* Place behind the green letter */
     /* position: absolute; Enable precise placement */
@@ -200,14 +207,14 @@ body {
   
   /* Dear Abby (Below Red Typewriter) */
 .image7 {
-    top: 45vh; /* Offset 30vh below the top */
+    top: 25vh; /* Offset 30vh below the top */
     right: 55%; /* Align to the left */
     z-index: 3; /* Place above the red typewriter */
   }
   
  /* Magazines (Below and Rotated) */
 .image1 {
-    top: 115vh; /* Offset 60vh below the top */
+    top: 100vh; /* Offset 60vh below the top */
     right: 60%; /* Align to the left */
     transform: rotate(-15deg); /* Rotate 15 degrees counterclockwise */
     z-index: 4;
@@ -215,14 +222,14 @@ body {
   
 /* Radio (Top Right of Dear Abby) */
 .image4 {
-    top: 45vh; /* Offset 40vh below the top */
+    top: 30vh; /* Offset 40vh below the top */
     right: 40%; /* Center relative to the container */
     z-index: 4; /* Place above Dear Abby */
   }
   
 /* Newspaper (Rotated and Behind Radio) */
 .image5 {
-    top: 45vh; /* Align with the radio image */
+    top: 35vh; /* Align with the radio image */
     right: 10%; /* Align to the right */
     z-index: 1; /* Place behind the radio */
     transform: rotate(10deg); /* Rotate 35 degrees clockwise */
@@ -230,7 +237,7 @@ body {
   
 /* Letter (Above and Centered) */
 .image2 {
-    top: 70vh; /* Offset 50vh below the top */
+    top: 60vh; /* Offset 50vh below the top */
     right: 35%; /* Center between the radio and newspaper */
     z-index: 4; /* Place above both radio and newspaper */
   }
@@ -360,7 +367,6 @@ body {
     word-wrap: break-word; /* Break text to fit within the container if necessary */
     color: #000; /* Text color */
     font-family: 'Georgia', serif; /* Use Georgia font for text */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
   }
   
   textarea {
